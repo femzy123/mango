@@ -4,7 +4,7 @@ defmodule MangoWeb.HomepageTest do
 
   hound_session()
 
-  test "presence of featured products" do
+  test "presence of seasonal products" do
       ## GIVEN ##
   # There are two products Apple and Tomato priced at 100 and 50 respectively
   # With Apple being the only seasonal product
@@ -21,7 +21,7 @@ defmodule MangoWeb.HomepageTest do
     # And I expect Apple to be in the product displayed
     product = find_element(:css, ".product")
     product_name = find_within_element(product, :css, ".product-name") |> visible_text
-    product_price = find_within_element(product, :css, ".product- price") |> visible_text
+    product_price = find_within_element(product, :css, ".product-price") |> visible_text
 
     assert product_name == "Apple"
     # And I expect its price to be displayed on the screen
@@ -30,4 +30,5 @@ defmodule MangoWeb.HomepageTest do
     # And I expect that Tomato is not present on the screen
     refute page_source() =~ "Tomato"
   end
+  
 end
