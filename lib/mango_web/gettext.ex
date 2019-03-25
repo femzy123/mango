@@ -22,3 +22,4 @@ defmodule MangoWeb.Gettext do
   """
   use Gettext, otp_app: :mango
 end
+

@@ -21,7 +21,7 @@ defmodule Mango.CRM do
    customer = get_customer_by_email(email)
 
    cond do
-     customer && Bcrypt.verify_pass(pass, customer.password_hash) ->
+     customer && Comeonin.Bcrypt.checkpw(pass, customer.password_hash) ->
        customer
      true ->
        :error
@@ -33,7 +33,7 @@ defmodule Mango.CRM do
  end
 end
 
-`defmodule Mango.CRM do
+defmodule Mango.CRM do
  alias Mango.CRM.Customer
  alias Mango.Repo
 
@@ -54,9 +54,12 @@ end
 
  def get_customer_by_credentials(%{"email" => email, "password" => pass}) do
    customer = get_customer_by_email(email)
+   
+    IO.inspect pass
+    IO.inspect customer.password_hash
 
-   cond do
-     customer && Bcrypt.verify_pass(pass, customer.password_hash) ->
+    cond do
+    customer && Comeonin.Bcrypt.checkpw(pass, customer.password_hash) ->
        customer
      true ->
        :error

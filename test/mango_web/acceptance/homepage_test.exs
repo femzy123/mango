@@ -1,10 +1,10 @@
 defmodule MangoWeb.HomepageTest do
-  use ExUnit.Case
+  use Mango.DataCase
   use Hound.Helpers
 
   hound_session()
 
-  setup do 2
+  setup do
   ## GIVEN ##
   # There are two products Apple and Tomato priced 100 and 50 respectively
   # Where Apple being the only seasonal product

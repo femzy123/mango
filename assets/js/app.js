@@ -6,7 +6,8 @@ import 'bootstrap'
 import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
-
+import ajaxCart from "./ajax_cart"
+ajaxCart.init()
 // webpack automatically bundles all modules in your
 // entry points. Those entry points can be configured
 // in "webpack.config.js".

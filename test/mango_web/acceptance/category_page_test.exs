@@ -1,5 +1,5 @@
 defmodule MangoWeb.Acceptance.CategoryPageTest do
-  use ExUnit.Case
+  use Mango.DataCase
   use Hound.Helpers
 
   hound_session()
